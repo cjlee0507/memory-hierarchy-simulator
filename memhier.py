@@ -2,7 +2,8 @@ import math
 import sys 
 from collections import OrderedDict
 
-with open("./trace.config", "r") as config_file: #get data from config file
+CONFIG_PATH = sys.argv[1] if len(sys.argv) > 1 else "trace.config"
+with open(CONFIG_PATH, "r") as config_file: #get data from config file
     for line in config_file:
         line = line.strip()
         if line.startswith("Data TLB configuration"):
